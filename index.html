@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<!-- il mio primo codice :3 -->
+
+<html>
+
+<head>
+
+    <title>To Do List</title>
+
+    <!-- Icona -->
+    <link rel="icon" href="Immagini/LogoTMC.png">
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Collegamento CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Realizzazione -->
+
+    <div class="container">
+
+        <header class="panel">
+            <!-- Intestazione -->
+            <h1>To do list ✓</h1>
+            <!-- Logo -->
+            <img src="Immagini/LogoTMC.png" alt="Logo The Monkey Coma" width="50">
+        </header>
+
+        <!-- Sezione principale -->
+        <main>
+
+            <!-- Messaggio da visualizzare in caso non ci siano attività -->
+            <p class="empty-list">Sembra non ci siano <strong>nuove attività.</strong></p>
+
+            <!-- Lista attività -->
+            <ul class="todo-list">
+                <li class="todo-item">
+                    <div class="todo-check"><strong>✓</strong></div>
+                    <p class="todo-text">Tela Numero 1</p>
+                </li>
+            </ul>
+
+            <!-- Pannello aggiunta attività -->
+
+            <div class="panel add-todo">
+                <input type="text" placeholder="Aggiungi attività">
+                <button title="+"><strong>+</strong></button>
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- Collegamento JS. Sempre in fondo prima di chiudere body. -->
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
