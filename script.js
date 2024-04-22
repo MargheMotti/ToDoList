@@ -5,7 +5,7 @@ const inputField = document.querySelector('input');
 const todoList = document.querySelector('.todo-list');
 const emptyList = document.querySelector('.empty-list');
 
-// credo una chiaver per il local storage
+// creo una chiaver per il local storage
 const STORAGE_KEY = '__TODO__'
 
 // Preparazione lista attività
@@ -16,7 +16,6 @@ const storage = localStorage.getItem(STORAGE_KEY)
 if (storage) {
     activities = JSON.parse(storage)
 }
-
 
 //Esecuzione funzione, chiedo a JS di mostrare in pagina
 ShowContent();
@@ -32,8 +31,6 @@ button.addEventListener('click', function () {
         addActivity(newActivity);
     };
 });
-
-
 
 // FUNZIONI
 
@@ -72,14 +69,20 @@ function makeCheckClickable() {
     checks.forEach(function (check, index) {
         // aggiungi una reazione al click
         check.addEventListener('click', function () {
-            // rimuovi l'elemento dalla lista
-            activities.splice(index, 1)
+          
+            // Chiedi la conferma
+            const confirmed = window.confirm('Vuoi passare alla prossima attività? 🎨');
+            // Se sì, cancella attività
+            if (confirmed) {
+                // rimuovi l'elemento dalla lista
+                activities.splice(index, 1)
 
-            // aggiorna il localStorage
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(activities))
+                // aggiorna il localStorage
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(activities))
 
-            // aggiorna la lista in pagina (localStorage)
-            ShowContent();
+                // aggiorna la lista in pagina
+                ShowContent();
+            }
         })
     })
 };
